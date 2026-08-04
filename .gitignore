@@ -1,3 +1,7 @@
 venv/
 pycache/
-*.pyc
+*.aac
+*.oga
+*.mp3
+*.wav
+data/
