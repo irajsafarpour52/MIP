@@ -1,5 +1,13 @@
+import sys
+import os
+
+sys.path.append(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)
+
 from whisper_service import transcribe
 from ollama_service import summarize_meeting
+from writers.markdown_writer import write_markdown
 
 
 def process_meeting(audio_file: str):
@@ -13,6 +21,7 @@ def process_meeting(audio_file: str):
     print("Step 2 : Analyzing with Ollama...")
 
     result = summarize_meeting(transcript)
+    write_markdown(result,"meeting_report.md")
 
     return result
 
