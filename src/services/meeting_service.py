@@ -8,6 +8,7 @@ sys.path.append(
 from whisper_service import transcribe
 from ollama_service import summarize_meeting
 from writers.markdown_writer import write_markdown
+from text_cleaner import  clean_text
 
 
 def process_meeting(audio_file: str):
@@ -16,7 +17,14 @@ def process_meeting(audio_file: str):
 
     transcript = transcribe(audio_file)
 
-    print("Transcript completed.\n")
+    print("Raw transcript:")
+    print(transcript)
+
+    transcript = clean_text(transcript)
+
+    print("\nClean transcript:")
+    print(transcript)
+
 
     print("Step 2 : Analyzing with Ollama...")
 
