@@ -1,0 +1,2 @@
+# MIP
+meeting Intelligent Platform
