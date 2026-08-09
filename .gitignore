@@ -1,7 +1,22 @@
+# Virtual environments
 venv/
-pycache/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment and secrets
+.env
+*.key
+*.pem
+
+# Audio files
 *.aac
 *.oga
 *.mp3
 *.wav
+
+# Local data
 data/
+data/audio/

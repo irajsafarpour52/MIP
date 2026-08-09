@@ -1,4 +1,5 @@
 import json
+import os
 import requests
 
 
@@ -6,41 +7,23 @@ OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "qwen2.5:3b"
 
 
-def summarize_meeting(transcript: str) -> dict:
-    """
-    دریافت متن جلسه و برگرداندن خلاصه ساختاریافته
-    """
-
-    prompt = f"""
-تو یک دستیار حرفه‌ای مدیریت جلسه هستی.
-
-قوانین مهم:
-
-1. فقط از متن جلسه استفاده کن.
-2. هیچ اطلاعاتی از خودت اضافه نکن.
-3. غلط‌های تشخیص گفتار Whisper را اصلاح کن.
-4. اصطلاحات فنی را حفظ کن:
-   MVP, AI, API, ERP, Git, Whisper, Ollama, Software
-5. اگر کلمه‌ای نامشخص است، حدس قطعی نزن.
-6. اگر تصمیمی در متن وجود ندارد، decisions را خالی بگذار.
-7. اگر وظیفه مشخصی در متن وجود ندارد، tasks را خالی بگذار.
-8. فقط JSON خروجی بده.
-9. هیچ توضیحی قبل یا بعد از JSON ننویس.
-
-متن خام جلسه:
-
-{transcript}
+PROMPT_FILE = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)),
+    "prompts",
+    "meeting_analyzer_prompt.txt"
+)
 
 
-فرمت خروجی:
+def load_prompt() -> str:
+    with open(
+        PROMPT_FILE,
+        "r",
+        encoding="utf-8"
+    ) as file:
+        return file.read()
 
-{{
-  "summary": "",
-  "decisions": [],
-  "tasks": []
- # "keywords": []
-}}
-"""
+
+def generate_text(prompt: str) -> str:
 
     response = requests.post(
         OLLAMA_URL,
@@ -57,13 +40,42 @@ def summarize_meeting(transcript: str) -> dict:
 
     result = response.json()
 
+    return result["response"]
+
+
+def summarize_meeting(transcript: str) -> dict:
+    """
+    تحلیل متن جلسه و تولید خروجی ساختاریافته
+    """
+
+    if not transcript:
+        return {
+            "summary": "",
+            "decisions": [],
+            "tasks": [],
+            "next_meeting": None
+        }
+
+    prompt_template = load_prompt()
+
+    prompt = prompt_template.replace(
+        "{{TRANSCRIPT}}",
+        transcript
+    )
+
+    response_text = generate_text(prompt)
+
     try:
-        return json.loads(result["response"])
+        return json.loads(response_text)
 
     except json.JSONDecodeError:
+
         print("===== RAW RESPONSE FROM OLLAMA =====")
-        print(result["response"])
-        raise Exception("Ollama did not return valid JSON.")
+        print(response_text)
+
+        raise Exception(
+            "Ollama did not return valid JSON."
+        )
 
 
 if __name__ == "__main__":
@@ -76,8 +88,10 @@ if __name__ == "__main__":
 
     result = summarize_meeting(test_text)
 
-    print(json.dumps(
-        result,
-        ensure_ascii=False,
-        indent=2
-    ))
+    print(
+        json.dumps(
+            result,
+            ensure_ascii=False,
+            indent=2
+        )
+    )
