@@ -33,7 +33,7 @@ IMPORTANT RULES:
 - English technical terms such as API, MVP, GitHub, Whisper, Ollama, FastAPI, Python, PostgreSQL and similar terms should remain in their standard form when the intended term is clear.
 
 TERMINOLOGY:
-Use the following terminology when the intended word is clearly identifiable:
+Use the following terminology only when the intended term is clearly identifiable:
 
 ام وی پی → MVP
 ام بی پی → MVP
@@ -46,7 +46,6 @@ Use the following terminology when the intended word is clearly identifiable:
 هوش مصنوعی مولد → Generative AI
 رابط کار گری → رابط کاربری
 رابط کاربر → رابط کاربری
-نسخه اولیه محصول → MVP
 
 OUTPUT:
 Return ONLY the corrected transcript.

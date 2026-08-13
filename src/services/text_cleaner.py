@@ -13,7 +13,7 @@ def clean_text(text: str) -> str:
         "شبکت": "شبکه",
         "میتینگ": "جلسه",
         "پرگاهی": "پروژه",
-        "دیتاویس" :"دیتابیس" 
+        "دیتاویس": "دیتابیس" 
     }
 
     for wrong, correct in replacements.items():

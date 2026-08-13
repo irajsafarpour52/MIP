@@ -2,12 +2,13 @@ import os
 
 from gapgpt_services import generate_text
 
+
 # سرویس قبلی Ollama — فعلاً غیرفعال است و حذف نمی‌شود
 # from ollama_service import generate_text
 
 
 PROMPT_FILE = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)),
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     "prompts",
     "transcript_corrector_prompt.txt"
 )
@@ -26,10 +27,7 @@ def load_prompt() -> str:
 
 def correct_transcript(transcript: str) -> str:
     """
-    اصلاح متن خام Whisper.
-
-    این سرویس فقط Transcript را اصلاح می‌کند
-    و آن را خلاصه یا تحلیل نمی‌کند.
+    اصلاح Transcript خام Whisper.
     """
 
     if not transcript:
