@@ -48,11 +48,8 @@ def index_meeting_file(file_path: Path):
         )
 
         # ساخت ID یکتا
-        chunk_id = (
-            f"{meeting_id}_"
-            f"{chunk_type}_"
-            f"{index:02d}"
-        )
+        chunk_id=chunk["chunk_id"]
+        
 
         add_chunk(
             chunk_id=chunk_id,

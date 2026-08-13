@@ -109,8 +109,8 @@ if __name__ == "__main__":
     }
 
     add_chunk(
-        chunk_id="meeting_20260809_task_02",
-        chunk=test_chunk
+    chunk_id="mip_e85887ff2b5f4f71",
+    chunk=test_chunk
     )
 
     print(
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     )
 
     result = get_chunk(
-        "meeting_20260809_task_02"
+        "mip_e85887ff2b5f4f71"
     )
 
     print(

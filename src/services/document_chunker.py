@@ -1,5 +1,5 @@
 from document_loader import load_markdown
-
+import hashlib
 
 def chunk_markdown(markdown_text: str) -> list[dict]:
     """
@@ -68,20 +68,41 @@ def chunk_markdown(markdown_text: str) -> list[dict]:
     current_content = []
 
     def add_chunk(
-        chunk_type: str,
-        content: list[str]
+    chunk_type: str,
+    content: list[str]
     ):
-        text = "\n".join(content).strip()
+     text ="\n".join(content).strip()
 
-        if text:
+     if text:
 
-            chunks.append(
-                {
-                    "type": chunk_type,
-                    "content": text,
-                    "metadata": meeting_metadata.copy()
-                }
-            )
+        document_id = (
+            meeting_metadata["meeting_date"]
+            + "|"
+            + meeting_metadata["meeting_title"]
+        )
+
+        hash_source = (
+            document_id
+            + "|"
+            + chunk_type
+            + "|"
+            + text
+        )
+
+        chunk_hash = hashlib.sha256(
+            hash_source.encode("utf-8")
+        ).hexdigest()[:16]
+
+        chunk_id = f"mip_{chunk_hash}"
+
+        chunks.append(
+            {
+                "chunk_id": chunk_id,
+                "type": chunk_type,
+                "content": text,
+                "metadata": meeting_metadata.copy()
+            }
+        )
 
     for raw_line in lines:
 
@@ -278,6 +299,9 @@ if __name__ == "__main__":
             f"\n===== CHUNK {index} ====="
         )
 
+        print(
+            f"ID: {chunk['chunk_id']}"
+)
         print(
             f"TYPE: {chunk['type']}"
         )

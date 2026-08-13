@@ -114,7 +114,7 @@ def search_chunks(
                     "document": documents[i]
                 }
             )
-
+            
     return filtered_results
 
 

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIP | Meeting Intelligent Platform</title>
+    <link rel="stylesheet" href="/web/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <div class="brand">
+            <div class="brand-logo">MIP</div>
+            <div class="brand-text">
+                <div class="brand-title">MIP</div>
+                <div class="brand-subtitle">Meeting Intelligent Platform</div>
+            </div>
+        </div>
+        <div class="system-status">
+            <span class="status-dot"></span>
+            آماده به کار
+        </div>
+    </div>
+</header>
+
+<nav class="tabs">
+    <button class="tab active" onclick="showTab('meetings', this)">
+        <span class="tab-icon">🎙️</span>
+        <span>ثبت جلسه</span>
+    </button>
+    <button class="tab" onclick="showTab('chat', this)">
+        <span class="tab-icon">💬</span>
+        <span>دستیار MIP</span>
+    </button>
+</nav>
+
+<main class="main">
+
+    <section id="meetings" class="tab-content active">
+        <div class="page-heading">
+            <h1>ثبت جلسه جدید</h1>
+            <p>جلسه را ضبط کنید یا فایل صوتی آن را وارد کنید.</p>
+        </div>
+
+        <div class="record-card">
+            <div class="record-circle">🎙️</div>
+            <h2>ضبط جلسه</h2>
+            <p class="record-description">برای شروع ضبط، دکمه زیر را انتخاب کنید.</p>
+
+            <button class="record-button">
+                <span>●</span>
+                شروع ضبط
+            </button>
+
+            <div class="or-divider"><span>یا</span></div>
+
+            <label class="upload-button">
+                📁
+                انتخاب فایل صوتی
+                <input type="file" accept="audio/*" hidden>
+            </label>
+        </div>
+
+        <div class="info-card">
+            <div class="card-header">
+                <h2>اطلاعات جلسه</h2>
+                <p>اطلاعات زیر برای سازماندهی جلسات استفاده می‌شود.</p>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>عنوان جلسه</label>
+                    <input type="text" placeholder="مثلاً بررسی پروژه MIP">
+                </div>
+
+                <div class="form-group">
+                    <label>تاریخ جلسه</label>
+                    <input type="date">
+                </div>
+
+                <div class="form-group full">
+                    <label>شرکت‌کنندگان</label>
+                    <input type="text" placeholder="نام افراد را وارد کنید">
+                </div>
+            </div>
+
+            <button class="primary-button">تولید صورتجلسه</button>
+        </div>
+
+        <div class="process-status">
+            <div>
+                <strong>وضعیت سیستم</strong>
+                <span>آماده دریافت جلسه</span>
+            </div>
+            <span class="ready-badge">● آماده</span>
+        </div>
+    </section>
+
+    <section id="chat" class="tab-content chat-container">
+
+        <div class="chat-header">
+            <div class="chat-avatar">M</div>
+            <div>
+                <h1>دستیار هوشمند MIP</h1>
+                <p>درباره جلسات سؤال بپرسید.</p>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+
+            <div class="assistant-message">
+                <div class="message-avatar">M</div>
+                <div class="message-content">
+                    <div class="message-name">MIP</div>
+                    <div class="message-text">
+                        سلام 👋
+                        <br><br>
+                        من دستیار هوشمند جلسات MIP هستم.
+                        <br>
+                        می‌توانید درباره تصمیمات، وظایف، افراد مسئول و موضوعات مطرح‌شده در جلسات سؤال بپرسید.
+                    </div>
+
+                    <div class="suggestions">
+                        <button onclick="useSuggestion(this)">مسئول بررسی کیفیت Whisper کیست؟</button>
+                        <button onclick="useSuggestion(this)">چه تصمیماتی در جلسه گرفته شد؟</button>
+                        <button onclick="useSuggestion(this)">وظایف من در جلسات چیست؟</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="assistant-message demo-answer">
+                <div class="message-avatar">M</div>
+                <div class="message-content">
+                    <div class="message-name">MIP</div>
+                    <div class="message-text">
+                        مسئول بررسی کیفیت خروجی Whisper «من» هستم.
+                    </div>
+
+                    <div class="message-actions">
+                        <button title="مفید بود" onclick="likeAnswer(this)">👍</button>
+                        <button title="مفید نبود" onclick="dislikeAnswer(this)">👎</button>
+                        <button title="کپی پاسخ" onclick="copyAnswer(this)">📋</button>
+                        <button class="evidence-button" title="نمایش Evidence" onclick="toggleEvidence(this)">📚 Evidence</button>
+                    </div>
+
+                    <div class="evidence">
+                        <div class="evidence-header">
+                            <span>📚 منبع پاسخ</span>
+                            <button onclick="toggleEvidence(this)">مخفی کردن</button>
+                        </div>
+                        <div class="evidence-content">
+                            <div class="evidence-meta">
+                                <div><strong>جلسه:</strong> بررسی پروژه MIP</div>
+                                <div><strong>تاریخ:</strong> 2026-08-09</div>
+                                <div><strong>نوع:</strong> task</div>
+                            </div>
+                            <div class="source-text">
+                                - بررسی کیفیت خروجی Whisper
+                                <br>
+                                - مسئول: من
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chat-input-area">
+            <div class="chat-input-box">
+                <textarea id="question" rows="1"
+                    placeholder="درباره جلسات سؤال بپرسید..."
+                    onkeydown="handleKeyDown(event)"></textarea>
+                <button class="send-button" onclick="sendQuestion()">➤</button>
+            </div>
+            <div class="chat-hint">پاسخ‌ها فقط بر اساس اطلاعات جلسات تولید می‌شوند.</div>
+        </div>
+
+    </section>
+</main>
+
+<script>
+function showTab(tabName, button) {
+    document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+    button.classList.add("active");
+
+    document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active"));
+    document.getElementById(tabName).classList.add("active");
+}
+
+function useSuggestion(button) {
+    const input = document.getElementById("question");
+    input.value = button.innerText;
+    input.focus();
+}
+
+function sendQuestion() {
+    const input = document.getElementById("question");
+    const question = input.value.trim();
+    if (!question) return;
+    console.log("Question:", question);
+    input.value = "";
+}
+
+function handleKeyDown(event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+        event.preventDefault();
+        sendQuestion();
+    }
+}
+
+function toggleEvidence(button) {
+    const message = button.closest(".message-content");
+    const evidence = message.querySelector(".evidence");
+    if (!evidence) return;
+
+    evidence.classList.toggle("show");
+
+    const evidenceButton = message.querySelector(".evidence-button");
+    if (evidenceButton) {
+        evidenceButton.innerHTML = evidence.classList.contains("show")
+            ? "📖 Evidence"
+            : "📚 Evidence";
+    }
+}
+
+function likeAnswer(button) {
+    button.classList.toggle("selected");
+}
+
+function dislikeAnswer(button) {
+    button.classList.toggle("selected");
+}
+
+function copyAnswer(button) {
+    const message = button.closest(".message-content");
+    const text = message.querySelector(".message-text").innerText;
+
+    navigator.clipboard.writeText(text);
+
+    button.innerHTML = "✓";
+    setTimeout(() => button.innerHTML = "📋", 1500);
+}
+</script>
+
+</body>
+</html>
