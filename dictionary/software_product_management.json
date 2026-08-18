@@ -1,0 +1,999 @@
+{
+  "industry": "software",
+  "domain": "product_management",
+  "language": "fa",
+  "version": "1.0",
+
+  "terms": [
+    {
+      "term": "MVP",
+      "canonical": "MVP",
+      "aliases": [
+        {
+          "value": "ام وی پی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "ام‌وی‌پی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "ام وی پیی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "نسخه MVP",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "نسخه ام وی پی",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "product",
+      "taggable": true,
+      "related_terms": [
+        "Product",
+        "Feature",
+        "Release",
+        "Roadmap"
+      ]
+    },
+
+    {
+      "term": "Product",
+      "canonical": "Product",
+      "aliases": [
+        {
+          "value": "پروداکت",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "محصول",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "product",
+      "taggable": false,
+      "related_terms": [
+        "Product Management",
+        "Feature",
+        "Customer",
+        "User"
+      ]
+    },
+
+    {
+      "term": "Product Management",
+      "canonical": "Product Management",
+      "aliases": [
+        {
+          "value": "پروداکت منیجمنت",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "مدیریت محصول",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "product_management",
+      "taggable": false,
+      "related_terms": [
+        "Product Manager",
+        "Product",
+        "Roadmap",
+        "Backlog"
+      ]
+    },
+
+    {
+      "term": "Product Manager",
+      "canonical": "Product Manager",
+      "aliases": [
+        {
+          "value": "پروداکت منیجر",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "مدیر محصول",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "role",
+      "taggable": false,
+      "related_terms": [
+        "Product Management",
+        "Stakeholder",
+        "User"
+      ]
+    },
+
+    {
+      "term": "Feature",
+      "canonical": "Feature",
+      "aliases": [
+        {
+          "value": "فیچر",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "قابلیت",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "ویژگی",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "product",
+      "taggable": false,
+      "related_terms": [
+        "User Story",
+        "Epic",
+        "Release"
+      ]
+    },
+
+    {
+      "term": "Backlog",
+      "canonical": "Backlog",
+      "aliases": [
+        {
+          "value": "بک لاگ",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "بک‌لاگ",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "planning",
+      "taggable": false,
+      "related_terms": [
+        "Product Backlog",
+        "Sprint",
+        "User Story",
+        "Priority"
+      ]
+    },
+
+    {
+      "term": "Product Backlog",
+      "canonical": "Product Backlog",
+      "aliases": [
+        {
+          "value": "پروداکت بک لاگ",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "بک لاگ محصول",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "بک‌لاگ محصول",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "planning",
+      "taggable": false,
+      "related_terms": [
+        "Backlog",
+        "User Story",
+        "Epic",
+        "Priority"
+      ]
+    },
+
+    {
+      "term": "User Story",
+      "canonical": "User Story",
+      "aliases": [
+        {
+          "value": "یوزر استوری",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "یوزر‌استوری",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "داستان کاربر",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "requirements",
+      "taggable": false,
+      "related_terms": [
+        "Feature",
+        "Epic",
+        "Acceptance Criteria",
+        "Backlog"
+      ]
+    },
+
+    {
+      "term": "Epic",
+      "canonical": "Epic",
+      "aliases": [
+        {
+          "value": "اپیک",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "requirements",
+      "taggable": false,
+      "related_terms": [
+        "Feature",
+        "User Story",
+        "Product Backlog"
+      ]
+    },
+
+    {
+      "term": "Acceptance Criteria",
+      "canonical": "Acceptance Criteria",
+      "aliases": [
+        {
+          "value": "اکسپتنس کریتریا",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "معیار پذیرش",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "معیارهای پذیرش",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "requirements",
+      "taggable": false,
+      "related_terms": [
+        "User Story",
+        "Feature",
+        "Requirement"
+      ]
+    },
+
+    {
+      "term": "Requirement",
+      "canonical": "Requirement",
+      "aliases": [
+        {
+          "value": "ریکوایرمنت",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "نیازمندی",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "نیازمندی‌ها",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "requirements",
+      "taggable": false,
+      "related_terms": [
+        "User Story",
+        "Acceptance Criteria",
+        "Feature"
+      ]
+    },
+
+    {
+      "term": "Sprint",
+      "canonical": "Sprint",
+      "aliases": [
+        {
+          "value": "اسپرینت",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "agile",
+      "taggable": false,
+      "related_terms": [
+        "Scrum",
+        "Backlog",
+        "User Story",
+        "Release"
+      ]
+    },
+
+    {
+      "term": "Scrum",
+      "canonical": "Scrum",
+      "aliases": [
+        {
+          "value": "اسکرام",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "agile",
+      "taggable": false,
+      "related_terms": [
+        "Sprint",
+        "Backlog",
+        "Product Manager"
+      ]
+    },
+
+    {
+      "term": "Agile",
+      "canonical": "Agile",
+      "aliases": [
+        {
+          "value": "اجایل",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "چابک",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "methodology",
+      "taggable": false,
+      "related_terms": [
+        "Scrum",
+        "Sprint",
+        "Backlog"
+      ]
+    },
+
+    {
+      "term": "Roadmap",
+      "canonical": "Roadmap",
+      "aliases": [
+        {
+          "value": "رود مپ",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "رودمپ",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "نقشه راه",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "planning",
+      "taggable": false,
+      "related_terms": [
+        "MVP",
+        "Product",
+        "Feature",
+        "Release"
+      ]
+    },
+
+    {
+      "term": "Release",
+      "canonical": "Release",
+      "aliases": [
+        {
+          "value": "ریلیز",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "انتشار نسخه",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "release",
+      "taggable": false,
+      "related_terms": [
+        "Version",
+        "Feature",
+        "MVP",
+        "Roadmap"
+      ]
+    },
+
+    {
+      "term": "Version",
+      "canonical": "Version",
+      "aliases": [
+        {
+          "value": "ورژن",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "نسخه",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "release",
+      "taggable": false,
+      "related_terms": [
+        "Release",
+        "MVP",
+        "Product"
+      ]
+    },
+
+    {
+      "term": "Stakeholder",
+      "canonical": "Stakeholder",
+      "aliases": [
+        {
+          "value": "استیک هولدر",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "ذی‌نفع",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "ذینفع",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "stakeholder",
+      "taggable": false,
+      "related_terms": [
+        "Product Manager",
+        "Customer",
+        "User"
+      ]
+    },
+
+    {
+      "term": "User",
+      "canonical": "User",
+      "aliases": [
+        {
+          "value": "یوزر",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "کاربر",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "user",
+      "taggable": false,
+      "related_terms": [
+        "Customer",
+        "User Story",
+        "Product"
+      ]
+    },
+
+    {
+      "term": "Customer",
+      "canonical": "Customer",
+      "aliases": [
+        {
+          "value": "کاستومر",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "مشتری",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "customer",
+      "taggable": false,
+      "related_terms": [
+        "User",
+        "Product",
+        "Feedback"
+      ]
+    },
+
+    {
+      "term": "Feedback",
+      "canonical": "Feedback",
+      "aliases": [
+        {
+          "value": "فیدبک",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "بازخورد",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "product",
+      "taggable": false,
+      "related_terms": [
+        "Customer",
+        "User",
+        "Feature"
+      ]
+    },
+
+    {
+      "term": "Priority",
+      "canonical": "Priority",
+      "aliases": [
+        {
+          "value": "پرایوریتی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "اولویت",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "planning",
+      "taggable": false,
+      "related_terms": [
+        "Backlog",
+        "User Story",
+        "Feature"
+      ]
+    },
+
+    {
+      "term": "Deadline",
+      "canonical": "Deadline",
+      "aliases": [
+        {
+          "value": "ددلاین",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "مهلت",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "موعد",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "planning",
+      "taggable": false,
+      "related_terms": [
+        "Action Item",
+        "Sprint",
+        "Release"
+      ]
+    },
+
+    {
+      "term": "Action Item",
+      "canonical": "Action Item",
+      "aliases": [
+        {
+          "value": "اکشن آیتم",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "اقدام",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "اقدام لازم",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "وظیفه",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "meeting",
+      "taggable": false,
+      "related_terms": [
+        "Decision",
+        "Deadline",
+        "Product Manager"
+      ]
+    },
+
+    {
+      "term": "Decision",
+      "canonical": "Decision",
+      "aliases": [
+        {
+          "value": "دسیژن",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "تصمیم",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "تصمیم‌گیری",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "meeting",
+      "taggable": false,
+      "related_terms": [
+        "Action Item",
+        "Stakeholder",
+        "Product Manager"
+      ]
+    },
+
+    {
+      "term": "Meeting",
+      "canonical": "Meeting",
+      "aliases": [
+        {
+          "value": "میتینگ",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "جلسه",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "meeting",
+      "taggable": false,
+      "related_terms": [
+        "Meeting Minutes",
+        "Decision",
+        "Action Item"
+      ]
+    },
+
+    {
+      "term": "Meeting Minutes",
+      "canonical": "Meeting Minutes",
+      "aliases": [
+        {
+          "value": "میتینگ مینوتس",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "صورتجلسه",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "صورت جلسه",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "meeting",
+      "taggable": false,
+      "related_terms": [
+        "Meeting",
+        "Decision",
+        "Action Item"
+      ]
+    },
+
+    {
+      "term": "Whisper",
+      "canonical": "Whisper",
+      "aliases": [
+        {
+          "value": "ویسپر",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "وایسپر",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "ویس پر",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "technology",
+      "taggable": true,
+      "related_terms": [
+        "FastAPI",
+        "Embedding",
+        "RAG"
+      ]
+    },
+
+    {
+      "term": "FastAPI",
+      "canonical": "FastAPI",
+      "aliases": [
+        {
+          "value": "فست ای پی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "فست‌ای‌پی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "فست ای‌پی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "Fast API",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "technology",
+      "taggable": true,
+      "related_terms": [
+        "Whisper",
+        "MIP",
+        "API"
+      ]
+    },
+
+    {
+      "term": "ChromaDB",
+      "canonical": "ChromaDB",
+      "aliases": [
+        {
+          "value": "کروم دی بی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "کروم دی‌بی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "چروما دی بی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "Chromadb",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "technology",
+      "taggable": true,
+      "related_terms": [
+        "Embedding",
+        "Semantic Search",
+        "RAG"
+      ]
+    },
+
+    {
+      "term": "Embedding",
+      "canonical": "Embedding",
+      "aliases": [
+        {
+          "value": "امبدینگ",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "بردار معنایی",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "ai",
+      "taggable": true,
+      "related_terms": [
+        "ChromaDB",
+        "Semantic Search",
+        "RAG"
+      ]
+    },
+
+    {
+      "term": "RAG",
+      "canonical": "RAG",
+      "aliases": [
+        {
+          "value": "آر ای جی",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "ai",
+      "taggable": true,
+      "related_terms": [
+        "Embedding",
+        "Semantic Search",
+        "ChromaDB"
+      ]
+    },
+
+    {
+      "term": "Metadata",
+      "canonical": "Metadata",
+      "aliases": [
+        {
+          "value": "متادیتا",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "متا دیتا",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "فراداده",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "data",
+      "taggable": true,
+      "related_terms": [
+        "Semantic Search",
+        "ChromaDB"
+      ]
+    },
+
+    {
+      "term": "Semantic Search",
+      "canonical": "Semantic Search",
+      "aliases": [
+        {
+          "value": "سمانتیک سرچ",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "جستجوی معنایی",
+          "normalize": false,
+          "searchable": true
+        },
+        {
+          "value": "جست و جوی معنایی",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "search",
+      "taggable": true,
+      "related_terms": [
+        "Embedding",
+        "ChromaDB",
+        "RAG"
+      ]
+    },
+
+    {
+      "term": "Normalization",
+      "canonical": "Normalization",
+      "aliases": [
+        {
+          "value": "نرمال سازی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "نرمال‌سازی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "استانداردسازی اصطلاحات",
+          "normalize": false,
+          "searchable": true
+        }
+      ],
+      "category": "nlp",
+      "taggable": true,
+      "related_terms": [
+        "Whisper",
+        "Metadata",
+        "Semantic Search"
+      ]
+    },
+
+    {
+      "term": "GapGPT",
+      "canonical": "GapGPT",
+      "aliases": [
+        {
+          "value": "گپ جی پی تی",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "گپ جی‌پی‌تی",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "ai",
+      "taggable": true,
+      "related_terms": [
+        "Whisper",
+        "Normalization",
+        "RAG"
+      ]
+    },
+
+    {
+      "term": "Ollama",
+      "canonical": "Ollama",
+      "aliases": [
+        {
+          "value": "اولاما",
+          "normalize": true,
+          "searchable": true
+        },
+        {
+          "value": "اولاما",
+          "normalize": true,
+          "searchable": true
+        }
+      ],
+      "category": "technology",
+      "taggable": true,
+      "related_terms": [
+        "LLM",
+        "GapGPT",
+        "RAG"
+      ]
+    }
+  ]
+}

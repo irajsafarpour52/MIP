@@ -1,248 +1,756 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MIP | Meeting Intelligent Platform</title>
+
     <link rel="stylesheet" href="/web/style.css">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="header-inner">
-        <div class="brand">
-            <div class="brand-logo">MIP</div>
-            <div class="brand-text">
-                <div class="brand-title">MIP</div>
-                <div class="brand-subtitle">Meeting Intelligent Platform</div>
+<header class="topbar">
+
+    <div class="topbar-right">
+
+        <div class="brand-mark">MIP</div>
+
+        <div>
+            <div class="brand-name">MIP</div>
+            <div class="brand-subtitle">
+                Meeting Intelligent Platform
             </div>
         </div>
-        <div class="system-status">
-            <span class="status-dot"></span>
+
+    </div>
+
+
+    <div class="topbar-left">
+
+        <div class="system-pill">
+            <span></span>
             آماده به کار
         </div>
+
+        <button
+            class="icon-btn"
+            title="تنظیمات"
+            type="button"
+        >
+            ⚙
+        </button>
+
+        <div class="avatar">
+            IS
+        </div>
+
     </div>
+
 </header>
 
-<nav class="tabs">
-    <button class="tab active" onclick="showTab('meetings', this)">
-        <span class="tab-icon">🎙️</span>
-        <span>ثبت جلسه</span>
-    </button>
-    <button class="tab" onclick="showTab('chat', this)">
-        <span class="tab-icon">💬</span>
-        <span>دستیار MIP</span>
-    </button>
-</nav>
 
-<main class="main">
+<div class="app-shell">
 
-    <section id="meetings" class="tab-content active">
-        <div class="page-heading">
-            <h1>ثبت جلسه جدید</h1>
-            <p>جلسه را ضبط کنید یا فایل صوتی آن را وارد کنید.</p>
-        </div>
 
-        <div class="record-card">
-            <div class="record-circle">🎙️</div>
-            <h2>ضبط جلسه</h2>
-            <p class="record-description">برای شروع ضبط، دکمه زیر را انتخاب کنید.</p>
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
 
-            <button class="record-button">
-                <span>●</span>
-                شروع ضبط
+    <aside class="sidebar">
+
+        <nav>
+
+            <button
+                class="nav-item active"
+                type="button"
+            >
+                ▣
+                <span>ثبت جلسه</span>
             </button>
 
-            <div class="or-divider"><span>یا</span></div>
+            <button
+                class="nav-item"
+                type="button"
+            >
+                ✦
+                <span>دستیار هوشمند</span>
+            </button>
 
-            <label class="upload-button">
-                📁
-                انتخاب فایل صوتی
-                <input type="file" accept="audio/*" hidden>
-            </label>
-        </div>
+            <button
+                class="nav-item"
+                type="button"
+            >
+                ▣
+                <span>جلسات</span>
+            </button>
 
-        <div class="info-card">
-            <div class="card-header">
-                <h2>اطلاعات جلسه</h2>
-                <p>اطلاعات زیر برای سازماندهی جلسات استفاده می‌شود.</p>
+            <button
+                class="nav-item"
+                type="button"
+            >
+                ✓
+                <span>وظایف</span>
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+            >
+                ♙
+                <span>افراد</span>
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+            >
+                ▥
+                <span>گزارش‌ها</span>
+            </button>
+
+            <button
+                class="nav-item"
+                type="button"
+            >
+                ⚙
+                <span>تنظیمات</span>
+            </button>
+
+        </nav>
+
+
+        <div class="about-card">
+
+            <strong>
+                درباره MIP
+            </strong>
+
+            <p>
+                مدیریت هوشمند جلسات، تبدیل صدا به صورتجلسه
+                و ساخت پایگاه دانش قابل جستجو.
+            </p>
+
+            <small>
+                نسخه 1.0.0
+            </small>
+
+            <div class="active-state">
+                ● سیستم فعال است
             </div>
 
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>عنوان جلسه</label>
-                    <input type="text" placeholder="مثلاً بررسی پروژه MIP">
-                </div>
-
-                <div class="form-group">
-                    <label>تاریخ جلسه</label>
-                    <input type="date">
-                </div>
-
-                <div class="form-group full">
-                    <label>شرکت‌کنندگان</label>
-                    <input type="text" placeholder="نام افراد را وارد کنید">
-                </div>
-            </div>
-
-            <button class="primary-button">تولید صورتجلسه</button>
         </div>
 
-        <div class="process-status">
+
+        <div class="sidebar-help">
+            ? &nbsp; راهنما و پشتیبانی
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="content">
+
+
+        <div class="page-title">
+
             <div>
-                <strong>وضعیت سیستم</strong>
-                <span>آماده دریافت جلسه</span>
-            </div>
-            <span class="ready-badge">● آماده</span>
-        </div>
-    </section>
 
-    <section id="chat" class="tab-content chat-container">
+                <h1>
+                    ثبت و پردازش جلسه جدید 🎙️
+                </h1>
 
-        <div class="chat-header">
-            <div class="chat-avatar">M</div>
-            <div>
-                <h1>دستیار هوشمند MIP</h1>
-                <p>درباره جلسات سؤال بپرسید.</p>
+                <p>
+                    صورتجلسه خود را تولید، ویرایش و در بانک دانش ذخیره کنید.
+                </p>
+
             </div>
+
         </div>
 
-        <div class="chat-messages" id="chatMessages">
 
-            <div class="assistant-message">
-                <div class="message-avatar">M</div>
-                <div class="message-content">
-                    <div class="message-name">MIP</div>
-                    <div class="message-text">
-                        سلام 👋
-                        <br><br>
-                        من دستیار هوشمند جلسات MIP هستم.
-                        <br>
-                        می‌توانید درباره تصمیمات، وظایف، افراد مسئول و موضوعات مطرح‌شده در جلسات سؤال بپرسید.
+        <div class="workflow">
+
+
+            <!-- =================================================
+                 STEP 1
+                 ================================================= -->
+
+            <section class="card step-one">
+
+                <div class="step-title blue">
+
+                    <div class="step-num">
+                        ۱
                     </div>
 
-                    <div class="suggestions">
-                        <button onclick="useSuggestion(this)">مسئول بررسی کیفیت Whisper کیست؟</button>
-                        <button onclick="useSuggestion(this)">چه تصمیماتی در جلسه گرفته شد؟</button>
-                        <button onclick="useSuggestion(this)">وظایف من در جلسات چیست؟</button>
+                    <div>
+
+                        <h2>
+                            تولید صورتجلسه
+                        </h2>
+
+                        <p>
+                            فایل صوتی جلسه را ضبط یا انتخاب کنید.
+                        </p>
+
                     </div>
+
                 </div>
-            </div>
 
-            <div class="assistant-message demo-answer">
-                <div class="message-avatar">M</div>
-                <div class="message-content">
-                    <div class="message-name">MIP</div>
-                    <div class="message-text">
-                        مسئول بررسی کیفیت خروجی Whisper «من» هستم.
+
+                <div class="record-box">
+
+                    <div class="section-label">
+                        ضبط صدا
                     </div>
 
-                    <div class="message-actions">
-                        <button title="مفید بود" onclick="likeAnswer(this)">👍</button>
-                        <button title="مفید نبود" onclick="dislikeAnswer(this)">👎</button>
-                        <button title="کپی پاسخ" onclick="copyAnswer(this)">📋</button>
-                        <button class="evidence-button" title="نمایش Evidence" onclick="toggleEvidence(this)">📚 Evidence</button>
+
+                    <div
+                        id="waveform"
+                        class="waveform"
+                        aria-hidden="true"
+                    ></div>
+
+
+                    <div class="timer-row">
+
+                        <strong id="recordTimer">
+                            00:00:00
+                        </strong>
+
+                        <span
+                            id="recordState"
+                            class="record-ready"
+                        >
+                            آماده ضبط
+                        </span>
+
                     </div>
 
-                    <div class="evidence">
-                        <div class="evidence-header">
-                            <span>📚 منبع پاسخ</span>
-                            <button onclick="toggleEvidence(this)">مخفی کردن</button>
-                        </div>
-                        <div class="evidence-content">
-                            <div class="evidence-meta">
-                                <div><strong>جلسه:</strong> بررسی پروژه MIP</div>
-                                <div><strong>تاریخ:</strong> 2026-08-09</div>
-                                <div><strong>نوع:</strong> task</div>
-                            </div>
-                            <div class="source-text">
-                                - بررسی کیفیت خروجی Whisper
-                                <br>
-                                - مسئول: من
-                            </div>
-                        </div>
+
+                    <div class="record-controls">
+
+                        <button
+                            id="startRecord"
+                            class="record-control record-primary"
+                            type="button"
+                        >
+                            🔴 شروع ضبط
+                        </button>
+
+                        <button
+                            id="stopRecord"
+                            class="record-control"
+                            type="button"
+                            disabled
+                        >
+                            ■ توقف
+                        </button>
+
+                        <button
+                            id="resetRecord"
+                            class="record-control"
+                            type="button"
+                        >
+                            ↻ بازنشانی
+                        </button>
+
                     </div>
+
                 </div>
-            </div>
+
+
+                <div class="or-line">
+                    <span>یا</span>
+                </div>
+
+
+                <div class="upload-area">
+
+                    <div class="section-label">
+                        انتخاب فایل صوتی
+                    </div>
+
+
+                    <label class="dropzone">
+
+                        <span class="upload-icon">
+                            ↥
+                        </span>
+
+                        <strong>
+                            فایل صوتی را اینجا بکشید و رها کنید
+                        </strong>
+
+                        <small>
+                            یا برای انتخاب فایل کلیک کنید
+                        </small>
+
+                        <span class="choose-file">
+                            📁 انتخاب فایل
+                        </span>
+
+
+                        <input
+                            id="audioFile"
+                            type="file"
+                            accept="audio/*"
+                            hidden
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <div
+                    id="audioSelected"
+                    class="file-row hidden"
+                >
+
+                    <div class="file-icon">
+                        ♫
+                    </div>
+
+                    <div class="file-meta">
+
+                        <strong id="audioName"></strong>
+
+                        <small id="audioSize"></small>
+
+                    </div>
+
+
+                    <button
+                        id="removeAudio"
+                        class="remove-btn"
+                        type="button"
+                        title="حذف فایل"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <button
+                    id="generateButton"
+                    class="main-action blue-action"
+                    type="button"
+                >
+                    ✨ تولید صورتجلسه
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 STEP 2
+                 ================================================= -->
+
+            <section class="card step-two">
+
+                <div class="step-title purple">
+
+                    <div class="step-num">
+                        ۲
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            نمایش و ویرایش صورتجلسه
+                        </h2>
+
+                        <p>
+                            فایل Markdown تولید شده را مشاهده و در صورت نیاز ویرایش کنید.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="md-toolbar">
+
+                    <label class="md-file-button">
+
+                        📁 انتخاب فایل .md
+
+                        <input
+                            id="markdownFile"
+                            type="file"
+                            accept=".md,text/markdown,text/plain"
+                            hidden
+                        >
+
+                    </label>
+
+
+                    <div class="md-file-info">
+
+                        <strong id="mdName">
+                            meeting_report.md
+                        </strong>
+
+                        <small id="mdSize">
+                            فایلی انتخاب نشده است
+                        </small>
+
+                    </div>
+
+
+                    <span class="md-icon">
+                        ▤
+                    </span>
+
+                </div>
+
+
+                <div class="editor-header">
+
+                    <span>
+                        ویرایش صورتجلسه
+                    </span>
+
+
+                    <div class="editor-tools">
+
+                        <button type="button">↶</button>
+                        <button type="button">↷</button>
+
+                        <i></i>
+
+                        <button type="button">H1</button>
+                        <button type="button">H2</button>
+
+                        <button type="button">
+                            <b>B</b>
+                        </button>
+
+                        <button type="button">
+                            <i>I</i>
+                        </button>
+
+                        <button type="button">☷</button>
+                        <button type="button">☰</button>
+
+                    </div>
+
+                </div>
+
+
+                <textarea
+                    id="markdownEditor"
+                    class="markdown-editor"
+                    placeholder="متن صورتجلسه در اینجا نمایش داده می‌شود..."
+                    spellcheck="false"
+                ></textarea>
+
+
+                <div class="editor-footer">
+
+                    <span id="editorStatus">
+                        هنوز صورتجلسه‌ای بارگذاری نشده است
+                    </span>
+
+                    <span id="wordCount">
+                        ۰ کلمه
+                    </span>
+
+                </div>
+
+
+                <div class="editor-actions">
+
+                    <button
+                        id="saveMdButton"
+                        class="outline-button"
+                        type="button"
+                        disabled
+                    >
+                        ⬇ ذخیره در فایل
+                    </button>
+
+
+                    <button
+                        id="saveChangesButton"
+                        class="purple-action"
+                        type="button"
+                        disabled
+                    >
+                        ▣ ذخیره تغییرات
+                    </button>
+
+                </div>
+
+
+                <div class="tip-box purple-tip">
+
+                    <strong>
+                        💡 نکته
+                    </strong>
+
+                    <span>
+                        پس از ویرایش، متن نهایی همین بخش برای ذخیره در بانک دانش استفاده خواهد شد.
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STEP 3
+                 ================================================= -->
+
+            <section class="card step-three">
+
+                <div class="step-title green">
+
+                    <div class="step-num">
+                        ۳
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            ذخیره در بانک اطلاعاتی
+                        </h2>
+
+                        <p>
+                            صورتجلسه نهایی را در بانک دانش ذخیره کنید.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- اطلاعات جلسه -->
+
+                <div class="storage-box">
+
+                    <h3>
+                        اطلاعات جلسه
+                    </h3>
+
+
+                    <label>
+                        عنوان جلسه
+                        <small>(اختیاری)</small>
+                    </label>
+
+                    <input
+                        id="meetingTitle"
+                        type="text"
+                        placeholder="مثال: جلسه بررسی پروژه MIP"
+                    >
+
+
+                    <label>
+                        تاریخ جلسه
+                        <small>(اختیاری)</small>
+                    </label>
+
+                    <input
+                        id="meetingDate"
+                        type="date"
+                    >
+
+
+                    <!-- =================================================
+                         TAGS
+                         ================================================= -->
+
+                    <label>
+                        برچسب‌ها
+                        <small>(پیشنهادی)</small>
+                    </label>
+
+
+                    <!-- Tagهای پیشنهادی Backend -->
+
+                    <div
+                        id="suggestedTags"
+                        class="tag-container"
+                    >
+                    </div>
+
+
+                    <!-- Tagهای انتخاب‌شده -->
+
+                    <div
+                        id="selectedTags"
+                        class="tag-container"
+                    >
+                    </div>
+
+
+                    <!-- افزودن Tag دستی -->
+
+                    <div class="tag-input-row">
+
+                        <input
+                            id="meetingTagInput"
+                            type="text"
+                            placeholder="افزودن برچسب..."
+                        >
+
+                        <button
+                            id="addTagButton"
+                            type="button"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <!-- مقدار نهایی Tagها -->
+
+                    <input
+                        id="meetingTags"
+                        type="hidden"
+                    >
+
+
+                    <small class="hint">
+                        Tagهای پیشنهادی از Vocabulary تخصصی MIP استخراج می‌شوند.
+                        می‌توانید آن‌ها را حذف یا Tag جدید اضافه کنید.
+                    </small>
+
+                </div>
+
+
+                <!-- =================================================
+                     SUMMARY
+                     ================================================= -->
+
+                <div class="summary-box">
+
+                    <h3>
+                        خلاصه اطلاعات
+                    </h3>
+
+
+                    <div>
+
+                        <span>
+                            تعداد کلمات
+                        </span>
+
+                        <strong id="summaryWords">
+                            ۰
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            تعداد کاراکترها
+                        </span>
+
+                        <strong id="summaryChars">
+                            ۰
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            تاریخ و زمان
+                        </span>
+
+                        <strong id="summaryDate">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            وضعیت
+                        </span>
+
+                        <b
+                            class="ready-badge"
+                            id="storageStatus"
+                        >
+                            آماده
+                        </b>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="chromaButton"
+                    class="main-action green-action"
+                    type="button"
+                    disabled
+                >
+                    🗄️ ذخیره در ChromaDB
+                </button>
+
+
+                <div class="security-box">
+
+                    <strong>
+                        🔒 امنیت
+                    </strong>
+
+                    <p>
+                        متن نهایی پس از تأیید شما برای آماده‌سازی و ذخیره در بانک دانش استفاده می‌شود.
+                    </p>
+
+                </div>
+
+            </section>
 
         </div>
 
-        <div class="chat-input-area">
-            <div class="chat-input-box">
-                <textarea id="question" rows="1"
-                    placeholder="درباره جلسات سؤال بپرسید..."
-                    onkeydown="handleKeyDown(event)"></textarea>
-                <button class="send-button" onclick="sendQuestion()">➤</button>
-            </div>
-            <div class="chat-hint">پاسخ‌ها فقط بر اساس اطلاعات جلسات تولید می‌شوند.</div>
+
+        <!-- وضعیت کلی -->
+
+        <div
+            id="globalStatus"
+            class="global-status"
+        >
+
+            <span class="status-dot"></span>
+
+            <span id="globalStatusText">
+                آماده دریافت جلسه
+            </span>
+
         </div>
 
-    </section>
-</main>
 
-<script>
-function showTab(tabName, button) {
-    document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
-    button.classList.add("active");
+        <footer>
+            © 2026 MIP - Meeting Intelligent Platform. All rights reserved.
+        </footer>
 
-    document.querySelectorAll(".tab-content").forEach(content => content.classList.remove("active"));
-    document.getElementById(tabName).classList.add("active");
-}
+    </main>
 
-function useSuggestion(button) {
-    const input = document.getElementById("question");
-    input.value = button.innerText;
-    input.focus();
-}
+</div>
 
-function sendQuestion() {
-    const input = document.getElementById("question");
-    const question = input.value.trim();
-    if (!question) return;
-    console.log("Question:", question);
-    input.value = "";
-}
 
-function handleKeyDown(event) {
-    if (event.key === "Enter" && !event.shiftKey) {
-        event.preventDefault();
-        sendQuestion();
-    }
-}
-
-function toggleEvidence(button) {
-    const message = button.closest(".message-content");
-    const evidence = message.querySelector(".evidence");
-    if (!evidence) return;
-
-    evidence.classList.toggle("show");
-
-    const evidenceButton = message.querySelector(".evidence-button");
-    if (evidenceButton) {
-        evidenceButton.innerHTML = evidence.classList.contains("show")
-            ? "📖 Evidence"
-            : "📚 Evidence";
-    }
-}
-
-function likeAnswer(button) {
-    button.classList.toggle("selected");
-}
-
-function dislikeAnswer(button) {
-    button.classList.toggle("selected");
-}
-
-function copyAnswer(button) {
-    const message = button.closest(".message-content");
-    const text = message.querySelector(".message-text").innerText;
-
-    navigator.clipboard.writeText(text);
-
-    button.innerHTML = "✓";
-    setTimeout(() => button.innerHTML = "📋", 1500);
-}
-</script>
+<script src="/web/main.js"></script>
 
 </body>
 </html>

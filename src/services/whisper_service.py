@@ -2,6 +2,7 @@ from faster_whisper import WhisperModel
 
 print("Loading Whisper model...")
 
+
 model = WhisperModel(
     "small",
     device="cpu",
@@ -21,7 +22,31 @@ def transcribe(audio_file: str) -> str:
         language="fa",
         vad_filter=True,
         beam_size=5,
-        initial_prompt="جلسه کاری، پروژه نرم‌افزاری، MVP، توسعه محصول"
+        
+        # کمک به تشخیص واژه‌ها و اصطلاحات تخصصی جلسات
+        initial_prompt="جلسه کاری، پروژه نرم‌افزاری، MVP، توسعه محصول",
+        task="transcribe",
+
+     
+        # حفظ ارتباط معنایی بین بخش‌های متوالی جلسه
+        condition_on_previous_text=True,
+
+        # ابتدا با دمای صفر؛ در صورت مشکل امکان تلاش مجدد
+        temperature=(0.0, 0.2, 0.4),
+
+        # جلوگیری از تولید متن برای بخش‌های بدون گفتار
+        no_speech_threshold=0.6,
+
+        # جلوگیری از تکرارهای غیرطبیعی
+        compression_ratio_threshold=2.4,
+
+        # تشخیص خودکار سکوت‌ها و تقسیم مناسب‌تر صوت
+        #vad_filter=True
+      #  vad_parameters=True,
+        
+        # حداقل اطمینان قابل قبول برای تشخیص متن
+        log_prob_threshold=-1.0
+
     )
 
     transcript = ""

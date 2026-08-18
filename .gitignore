@@ -20,3 +20,9 @@ __pycache__/
 # Local data
 data/
 data/audio/
+# Generated meeting reports
+meeting_report.md
+src/web/meeting_report.md
+
+# Local UI images
+src/web/ChatGPT Image *.png

@@ -1,6 +1,6 @@
 import os
 
-from gapgpt_services import generate_text
+from .gapgpt_services import generate_text
 
 
 # سرویس قبلی Ollama — فعلاً غیرفعال است و حذف نمی‌شود
